@@ -17,6 +17,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/products', product);
 
+app.use('/', home)
+router.get('/', home_controller.home);
+
+
 var PORT = process.env.PORT || 4242;
 
 app.listen(PORT, function(){
