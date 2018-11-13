@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var product = require('./routes/product.route');
+var home = require('./routes/home.route');
 
 var mongoose = require('mongoose');
 var db_url = 'mongodb://dbuser:passw0rd@ds155663.mlab.com:55663/te4-papp';
@@ -18,7 +19,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/products', product);
 
 app.use('/', home)
-router.get('/', home_controller.home);
 
 
 var PORT = process.env.PORT || 4242;
