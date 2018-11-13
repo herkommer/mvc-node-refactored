@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/products', product);
 
-app.listen('4242', function(){
+app.listen('8080', function(){
     console.log('Server up and running');
 });
 
