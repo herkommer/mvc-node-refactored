@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', Home)
 app.use('/products', Product);
 
+//Set up static folder for scripts, images etc. Things not requireing a route
+app.use(express.static('www'));
+
 //Get a PORT from the node environment variable in Heroku production
 //If no production environment, use a preset value of 4242
 var PORT = process.env.PORT || 4242;
