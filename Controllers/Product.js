@@ -49,10 +49,11 @@ exports.CreateNewProduct = function(req,res){
         if (error) 
         {
             console.log('CreateNewProduct failed');
-            return next(error);
         }
-
-        res.send('Product created');
+        else 
+        {
+            res.send('Product created');
+        }   
     });
 }
 

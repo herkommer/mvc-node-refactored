@@ -12,6 +12,17 @@
 <body>
     <h2>Node MVC with Express and MongoDB (hosted at mLab)</h2>
     <hr/>
+    <button id="btnGetProducts">Get Products</button>
+    <button id="btnShowProductPanel">Add Product</button>
+    <hr/>
     <div id="content"></div>
+    <div id="panelProductDetails" style="display: none">
+        <form id="frmProductDetails">
+            <input type="text" id="name" name="name"/>
+            <input type="text" id="price" name="price"/>
+            <input type="submit" value="Add"/>
+        </form>
+    </div>
+    <div id="log"></div>
 </body>
 </html>
