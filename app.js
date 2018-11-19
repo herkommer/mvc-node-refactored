@@ -1,23 +1,30 @@
+//Get npm packages from node_modules
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var product = require('./routes/product.route');
-var home = require('./routes/home.route');
 
-var db_url = 'mongodb://dbuser:passw0rd@ds155663.mlab.com:55663/te4-papp';
-mongoose.connect( db_url, {useNewUrlParser: true}); //depcreated error removed
-mongoose.Promise=global.Promise; //vi ska prata promises senare
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error: '));
+//Get your other code modules (your routes)
+var Product = require('./Routes/Product');
+var Home = require('./Routes/Home');
 
+//Get your DB connection code (for clarity this is in a separate file)
+require('./Models/Repository');
+
+//Get the Express app object to communicate with the Express application
 var app = express();
+
+//Set up Express settings for handling text as JSON
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/', home)
-app.use('/products', product);
 
+//Set up ROUTES with Express 
+app.use('/', Home)
+app.use('/products', Product);
+
+//Get a PORT from the node environment variable in Heroku production
+//If no production environment, use a preset value of 4242
 var PORT = process.env.PORT || 4242;
 
+//Start the web server!
 app.listen(PORT, function(){
     console.log('Server up and running');
 });

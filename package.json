@@ -1,6 +1,6 @@
 {
   "name": "papp",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.3.10"
+    "mongoose": "^5.3.10",
+    "nodemon": "^1.18.6"
   }
 }
